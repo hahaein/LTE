@@ -1,0 +1,2558 @@
+version 2
+run SingleCell-UL-0-20170827-01:26:27-10749
+attr configname SingleCell-UL
+attr datetime 20170827-01:26:27
+attr experiment SingleCell-UL
+attr inifile omnetpp.ini
+attr iterationvars $numUEs=2
+attr iterationvarsf numUEs=2-
+attr measurement $numUEs=2
+attr network lte.simulations.networks.SingleCell2
+attr numUEs 2
+attr processid 10749
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.channelControl.alpha 1.0
+param **.channelControl.carrierFrequency 2100e+6Hz
+param **.channelControl.pMax 10W
+param **.deployer.numRbDl 6
+param **.deployer.numRbUl 6
+param **.fbDelay 1
+param **.feedbackComputation "xmldoc(\"config_channel.xml\")"
+param **.mobility.constraintAreaMaxZ 0m
+param **.mobility.constraintAreaMinZ 0m
+param **.nic.phy.channelModel "xmldoc(\"config_channel.xml\")"
+param **.numBands 6
+param **.rbAllocationType "\"localized\""
+param **.routingRecorder.enabled false
+param **.ue[*].macCellId 1
+param **.ue[*].masterId 1
+param *.eNodeB.mobility.initFromDisplayString false
+param *.eNodeB.mobility.initialX 300m
+param *.eNodeB.mobility.initialY 300m
+param *.numUe 2
+param *.server.numUdpApps 2
+param *.server.udpApp[*].localPort 3000+ancestorIndex(0)
+param *.server.udpApp[*].typename "\"VoIPReceiver\""
+param *.ue[*].mobility.constraintAreaMaxX 600m
+param *.ue[*].mobility.constraintAreaMaxY 600m
+param *.ue[*].mobility.constraintAreaMinX 0m
+param *.ue[*].mobility.constraintAreaMinY 0m
+param *.ue[*].mobility.initFromDisplayString false
+param *.ue[*].mobility.initialX uniform(0m,600m)
+param *.ue[*].mobility.initialY uniform(0m,600m)
+param *.ue[*].mobility.speed 1mps
+param *.ue[*].mobilityType "\"LinearMobility\""
+param *.ue[*].numUdpApps 1
+param *.ue[*].udpApp[*].destAddress "\"server\""
+param *.ue[*].udpApp[*].destPort 3000+ancestorIndex(1)
+param *.ue[*].udpApp[*].localPort 3088
+param *.ue[*].udpApp[*].startTime uniform(0s,0.02s)
+param *.ue[*].udpApp[*].typename "\"VoIPSender\""
+
+scalar _runattrs_ 	numUEs 	2
+scalar SingleCell2.server.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar SingleCell2.server.networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar SingleCell2.server.networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar SingleCell2.server.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar SingleCell2.server.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar SingleCell2.server.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar SingleCell2.server.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar SingleCell2.server.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar SingleCell2.server.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar SingleCell2.server.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar SingleCell2.server.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic SingleCell2.server.ppp[0].queue 	queueingTime:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min -nan
+field max -nan
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar SingleCell2.server.ppp[0].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar SingleCell2.server.ppp[0].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar SingleCell2.server.ppp[0].queue 	queueLength:max 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar SingleCell2.server.ppp[0].queue 	queueLength:timeavg 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar SingleCell2.server.ppp[0].queue 	rcvdPk:count 	0
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar SingleCell2.server.ppp[0].queue 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar SingleCell2.server.ppp[0].ppp 	txState:timeavg 	-nan
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar SingleCell2.server.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar SingleCell2.server.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar SingleCell2.server.ppp[0].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar SingleCell2.server.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar SingleCell2.server.ppp[0].ppp 	rxPkOk:count 	239
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar SingleCell2.server.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	17925
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar SingleCell2.server.ppp[0].ppp 	txPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar SingleCell2.server.ppp[0].ppp 	txPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar SingleCell2.server.ppp[0].ppp 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar SingleCell2.server.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar SingleCell2.server.ppp[0].ppp 	passedUpPk:count 	239
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar SingleCell2.server.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	16252
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar SingleCell2.server.udpApp[0] 	voipReceivedThroughtput:timeavg 	40
+attr source  voipReceivedThroughtput
+attr title  "Throughput received at the application level, timeavg"
+attr unit  Bps
+scalar SingleCell2.server.udpApp[0] 	voipReceivedThroughtput:mean 	40
+attr source  voipReceivedThroughtput
+attr title  "Throughput received at the application level, mean"
+attr unit  Bps
+scalar SingleCell2.server.udpApp[0] 	voipReceivedThroughtput:sum 	4120
+attr source  voipReceivedThroughtput
+attr title  "Throughput received at the application level, sum"
+attr unit  Bps
+scalar SingleCell2.server.udpApp[0] 	voIPTaildropLoss:mean 	0
+attr source  voIPTaildropLoss
+attr title  "VoIP Tail Drop Loss, mean"
+attr unit  ratio
+scalar SingleCell2.server.udpApp[0] 	voIPMos:mean 	4.379904376215
+attr source  voIPMos
+attr title  "VoIP Mos Signal, mean"
+attr unit  MOS
+scalar SingleCell2.server.udpApp[0] 	voIPJitter:mean 	0.005
+attr source  voIPJitter
+attr title  "VoIP Playout Loss, mean"
+attr unit  s
+scalar SingleCell2.server.udpApp[0] 	voIPPlayoutLoss:mean 	0.0015151515151515
+attr source  voIPPlayoutLoss
+attr title  "VoIP Playout Loss, mean"
+attr unit  ratio
+scalar SingleCell2.server.udpApp[0] 	voIPPlayoutDelay:mean 	0
+attr source  voIPPlayoutDelay
+attr title  "VoIP Playout Delay, mean"
+attr unit  s
+scalar SingleCell2.server.udpApp[0] 	voIPFrameDelay:mean 	0.0088991641102655
+attr source  voIPFrameDelay
+attr title  "VoIP Frame Delay, mean"
+attr unit  s
+scalar SingleCell2.server.udpApp[0] 	voIPFrameLoss:mean 	0
+attr source  voIPFrameLoss
+attr title  "VoIP Frame Loss, mean"
+attr unit  ratio
+scalar SingleCell2.server.udpApp[1] 	voipReceivedThroughtput:timeavg 	40
+attr source  voipReceivedThroughtput
+attr title  "Throughput received at the application level, timeavg"
+attr unit  Bps
+scalar SingleCell2.server.udpApp[1] 	voipReceivedThroughtput:mean 	40
+attr source  voipReceivedThroughtput
+attr title  "Throughput received at the application level, mean"
+attr unit  Bps
+scalar SingleCell2.server.udpApp[1] 	voipReceivedThroughtput:sum 	5440
+attr source  voipReceivedThroughtput
+attr title  "Throughput received at the application level, sum"
+attr unit  Bps
+scalar SingleCell2.server.udpApp[1] 	voIPTaildropLoss:mean 	0
+attr source  voIPTaildropLoss
+attr title  "VoIP Tail Drop Loss, mean"
+attr unit  ratio
+scalar SingleCell2.server.udpApp[1] 	voIPMos:mean 	4.2621182567387
+attr source  voIPMos
+attr title  "VoIP Mos Signal, mean"
+attr unit  MOS
+scalar SingleCell2.server.udpApp[1] 	voIPJitter:mean 	0.004
+attr source  voIPJitter
+attr title  "VoIP Playout Loss, mean"
+attr unit  s
+scalar SingleCell2.server.udpApp[1] 	voIPPlayoutLoss:mean 	0.0065789473684211
+attr source  voIPPlayoutLoss
+attr title  "VoIP Playout Loss, mean"
+attr unit  ratio
+scalar SingleCell2.server.udpApp[1] 	voIPPlayoutDelay:mean 	0.022
+attr source  voIPPlayoutDelay
+attr title  "VoIP Playout Delay, mean"
+attr unit  s
+scalar SingleCell2.server.udpApp[1] 	voIPFrameDelay:mean 	0.028578505509316
+attr source  voIPFrameDelay
+attr title  "VoIP Frame Delay, mean"
+attr unit  s
+scalar SingleCell2.server.udpApp[1] 	voIPFrameLoss:mean 	0
+attr source  voIPFrameLoss
+attr title  "VoIP Frame Loss, mean"
+attr unit  ratio
+scalar SingleCell2.server.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar SingleCell2.server.udp 	droppedPkWrongPort:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar SingleCell2.server.udp 	passedUpPk:count 	239
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar SingleCell2.server.udp 	rcvdPk:count 	239
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar SingleCell2.server.udp 	rcvdPk:sum(packetBytes) 	11472
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar SingleCell2.server.udp 	sentPk:count 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar SingleCell2.server.udp 	sentPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar SingleCell2.router.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar SingleCell2.router.networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar SingleCell2.router.networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar SingleCell2.router.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar SingleCell2.router.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar SingleCell2.router.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar SingleCell2.router.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar SingleCell2.router.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar SingleCell2.router.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar SingleCell2.router.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar SingleCell2.router.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic SingleCell2.router.ppp[0].queue 	queueingTime:histogram
+field count 239
+field mean 0
+field stddev 0
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	239
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar SingleCell2.router.ppp[0].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar SingleCell2.router.ppp[0].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar SingleCell2.router.ppp[0].queue 	queueLength:max 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar SingleCell2.router.ppp[0].queue 	queueLength:timeavg 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar SingleCell2.router.ppp[0].queue 	rcvdPk:count 	239
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar SingleCell2.router.ppp[0].queue 	rcvdPk:sum(packetBytes) 	16252
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar SingleCell2.router.ppp[0].ppp 	txState:timeavg 	4.7847853831623e-06
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar SingleCell2.router.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar SingleCell2.router.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar SingleCell2.router.ppp[0].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar SingleCell2.router.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar SingleCell2.router.ppp[0].ppp 	rxPkOk:count 	0
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar SingleCell2.router.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar SingleCell2.router.ppp[0].ppp 	txPk:count 	239
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar SingleCell2.router.ppp[0].ppp 	txPk:sum(packetBytes) 	17925
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar SingleCell2.router.ppp[0].ppp 	rcvdPkFromHL:count 	239
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar SingleCell2.router.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	16252
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar SingleCell2.router.ppp[0].ppp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar SingleCell2.router.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic SingleCell2.router.ppp[1].queue 	queueingTime:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min -nan
+field max -nan
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar SingleCell2.router.ppp[1].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar SingleCell2.router.ppp[1].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar SingleCell2.router.ppp[1].queue 	queueLength:max 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar SingleCell2.router.ppp[1].queue 	queueLength:timeavg 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar SingleCell2.router.ppp[1].queue 	rcvdPk:count 	0
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar SingleCell2.router.ppp[1].queue 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar SingleCell2.router.ppp[1].ppp 	txState:timeavg 	-nan
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar SingleCell2.router.ppp[1].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar SingleCell2.router.ppp[1].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar SingleCell2.router.ppp[1].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar SingleCell2.router.ppp[1].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar SingleCell2.router.ppp[1].ppp 	rxPkOk:count 	136
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar SingleCell2.router.ppp[1].ppp 	rxPkOk:sum(packetBytes) 	10200
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar SingleCell2.router.ppp[1].ppp 	txPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar SingleCell2.router.ppp[1].ppp 	txPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar SingleCell2.router.ppp[1].ppp 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar SingleCell2.router.ppp[1].ppp 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar SingleCell2.router.ppp[1].ppp 	passedUpPk:count 	136
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar SingleCell2.router.ppp[1].ppp 	passedUpPk:sum(packetBytes) 	9248
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic SingleCell2.router.ppp[2].queue 	queueingTime:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min -nan
+field max -nan
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar SingleCell2.router.ppp[2].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar SingleCell2.router.ppp[2].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar SingleCell2.router.ppp[2].queue 	queueLength:max 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar SingleCell2.router.ppp[2].queue 	queueLength:timeavg 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar SingleCell2.router.ppp[2].queue 	rcvdPk:count 	0
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar SingleCell2.router.ppp[2].queue 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar SingleCell2.router.ppp[2].ppp 	txState:timeavg 	-nan
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar SingleCell2.router.ppp[2].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar SingleCell2.router.ppp[2].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar SingleCell2.router.ppp[2].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar SingleCell2.router.ppp[2].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar SingleCell2.router.ppp[2].ppp 	rxPkOk:count 	103
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar SingleCell2.router.ppp[2].ppp 	rxPkOk:sum(packetBytes) 	7725
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar SingleCell2.router.ppp[2].ppp 	txPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar SingleCell2.router.ppp[2].ppp 	txPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar SingleCell2.router.ppp[2].ppp 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar SingleCell2.router.ppp[2].ppp 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar SingleCell2.router.ppp[2].ppp 	passedUpPk:count 	103
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar SingleCell2.router.ppp[2].ppp 	passedUpPk:sum(packetBytes) 	7004
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar SingleCell2.pgw.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar SingleCell2.pgw.networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar SingleCell2.pgw.networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar SingleCell2.pgw.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar SingleCell2.pgw.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar SingleCell2.pgw.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar SingleCell2.pgw.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar SingleCell2.pgw.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar SingleCell2.pgw.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar SingleCell2.pgw.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar SingleCell2.pgw.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic SingleCell2.pgw.ppp[0].queue 	queueingTime:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min -nan
+field max -nan
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar SingleCell2.pgw.ppp[0].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar SingleCell2.pgw.ppp[0].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar SingleCell2.pgw.ppp[0].queue 	queueLength:max 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar SingleCell2.pgw.ppp[0].queue 	queueLength:timeavg 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar SingleCell2.pgw.ppp[0].queue 	rcvdPk:count 	0
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar SingleCell2.pgw.ppp[0].queue 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar SingleCell2.pgw.ppp[0].ppp 	txState:timeavg 	-nan
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar SingleCell2.pgw.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar SingleCell2.pgw.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar SingleCell2.pgw.ppp[0].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar SingleCell2.pgw.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar SingleCell2.pgw.ppp[0].ppp 	rxPkOk:count 	136
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar SingleCell2.pgw.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	14008
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar SingleCell2.pgw.ppp[0].ppp 	txPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar SingleCell2.pgw.ppp[0].ppp 	txPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar SingleCell2.pgw.ppp[0].ppp 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar SingleCell2.pgw.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar SingleCell2.pgw.ppp[0].ppp 	passedUpPk:count 	136
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar SingleCell2.pgw.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	13056
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic SingleCell2.pgw.pppInterface.queue 	queueingTime:histogram
+field count 136
+field mean 0
+field stddev 0
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	136
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar SingleCell2.pgw.pppInterface.queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar SingleCell2.pgw.pppInterface.queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar SingleCell2.pgw.pppInterface.queue 	queueLength:max 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar SingleCell2.pgw.pppInterface.queue 	queueLength:timeavg 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar SingleCell2.pgw.pppInterface.queue 	rcvdPk:count 	136
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar SingleCell2.pgw.pppInterface.queue 	rcvdPk:sum(packetBytes) 	9248
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar SingleCell2.pgw.pppInterface.ppp 	txState:timeavg 	2.722722963289e-06
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar SingleCell2.pgw.pppInterface.ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar SingleCell2.pgw.pppInterface.ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar SingleCell2.pgw.pppInterface.ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar SingleCell2.pgw.pppInterface.ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar SingleCell2.pgw.pppInterface.ppp 	rxPkOk:count 	0
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar SingleCell2.pgw.pppInterface.ppp 	rxPkOk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar SingleCell2.pgw.pppInterface.ppp 	txPk:count 	136
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar SingleCell2.pgw.pppInterface.ppp 	txPk:sum(packetBytes) 	10200
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar SingleCell2.pgw.pppInterface.ppp 	rcvdPkFromHL:count 	136
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar SingleCell2.pgw.pppInterface.ppp 	rcvdPkFromHL:sum(packetBytes) 	9248
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar SingleCell2.pgw.pppInterface.ppp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar SingleCell2.pgw.pppInterface.ppp 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar SingleCell2.pgw.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar SingleCell2.pgw.udp 	droppedPkWrongPort:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar SingleCell2.pgw.udp 	passedUpPk:count 	136
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar SingleCell2.pgw.udp 	rcvdPk:count 	136
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar SingleCell2.pgw.udp 	rcvdPk:sum(packetBytes) 	10336
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar SingleCell2.pgw.udp 	sentPk:count 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar SingleCell2.pgw.udp 	sentPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar SingleCell2.eNodeB.nic.pdcpRrc 	sentPacketToLowerLayer:count 	0
+attr interpolationmode  none
+attr source  sentPacketToLowerLayer
+scalar SingleCell2.eNodeB.nic.pdcpRrc 	sentPacketToLowerLayer:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPacketToLowerLayer
+scalar SingleCell2.eNodeB.nic.pdcpRrc 	sentPacketToUpperLayer:count 	239
+attr interpolationmode  none
+attr source  sentPacketToUpperLayer
+scalar SingleCell2.eNodeB.nic.pdcpRrc 	sentPacketToUpperLayer:sum(packetBytes) 	16252
+attr interpolationmode  none
+attr source  sentPacketToUpperLayer
+scalar SingleCell2.eNodeB.nic.pdcpRrc 	receivedPacketFromLowerLayer:count 	239
+attr interpolationmode  none
+attr source  receivedPacketFromLowerLayer
+scalar SingleCell2.eNodeB.nic.pdcpRrc 	receivedPacketFromLowerLayer:sum(packetBytes) 	16491
+attr interpolationmode  none
+attr source  receivedPacketFromLowerLayer
+scalar SingleCell2.eNodeB.nic.pdcpRrc 	receivedPacketFromUpperLayer:count 	0
+attr interpolationmode  none
+attr source  receivedPacketFromUpperLayer
+scalar SingleCell2.eNodeB.nic.pdcpRrc 	receivedPacketFromUpperLayer:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  receivedPacketFromUpperLayer
+scalar SingleCell2.eNodeB.nic.rlc.um 	rlcCellPacketLossUl:lteAvg 	0
+attr source  rlcCellPacketLossUl
+attr title  "rlc Cell Packet Loss, lteAvg"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.rlc.um 	rlcCellThroughputUl:lteRate 	5502.5025025025
+attr source  rlcCellThroughputUl
+attr title  "Cell Throughput at the rlc layer UL, lteRate"
+attr unit  Bps
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlMuMimo4:lteAvg 	15
+attr source  cqiDlMuMimo4
+attr title  "Average cqi MuMimo band 4, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlMuMimo4:lteAvg 	3.2594810379242
+attr source  cqiDlMuMimo4
+attr title  "Average cqi MuMimo band 4, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlMuMimo3:lteAvg 	14.974051896208
+attr source  cqiDlMuMimo3
+attr title  "Average cqi MuMimo band 3, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlMuMimo3:lteAvg 	2.1536926147705
+attr source  cqiDlMuMimo3
+attr title  "Average cqi MuMimo band 3, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlMuMimo2:lteAvg 	15
+attr source  cqiDlMuMimo2
+attr title  "Average cqi MuMimo band 2, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlMuMimo2:lteAvg 	9.0039920159681
+attr source  cqiDlMuMimo2
+attr title  "Average cqi MuMimo band 2, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlMuMimo1:lteAvg 	15
+attr source  cqiDlMuMimo1
+attr title  "Average cqi MuMimo band 1, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlMuMimo1:lteAvg 	10.00998003992
+attr source  cqiDlMuMimo1
+attr title  "Average cqi MuMimo band 1, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlMuMimo0:lteAvg 	15
+attr source  cqiDlMuMimo0
+attr title  "Average cqi MuMimo band 0, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlMuMimo0:lteAvg 	8.6546906187625
+attr source  cqiDlMuMimo0
+attr title  "Average cqi MuMimo band 0, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlTxDiv4:lteAvg 	15
+attr source  cqiDlTxDiv4
+attr title  "Average cqi TxDiv band 4, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlTxDiv4:lteAvg 	12.463073852295
+attr source  cqiDlTxDiv4
+attr title  "Average cqi TxDiv band 4, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlTxDiv3:lteAvg 	14.996007984032
+attr source  cqiDlTxDiv3
+attr title  "Average cqi TxDiv band 3, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlTxDiv3:lteAvg 	8.9461077844311
+attr source  cqiDlTxDiv3
+attr title  "Average cqi TxDiv band 3, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlTxDiv2:lteAvg 	15
+attr source  cqiDlTxDiv2
+attr title  "Average cqi TxDiv band 2, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlTxDiv2:lteAvg 	14.978043912176
+attr source  cqiDlTxDiv2
+attr title  "Average cqi TxDiv band 2, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlTxDiv1:lteAvg 	15
+attr source  cqiDlTxDiv1
+attr title  "Average cqi TxDiv band 1, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlTxDiv1:lteAvg 	14.986027944112
+attr source  cqiDlTxDiv1
+attr title  "Average cqi TxDiv band 1, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlTxDiv0:lteAvg 	15
+attr source  cqiDlTxDiv0
+attr title  "Average cqi TxDiv band 0, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlTxDiv0:lteAvg 	14.996007984032
+attr source  cqiDlTxDiv0
+attr title  "Average cqi TxDiv band 0, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlSpmux4:lteAvg 	15
+attr source  cqiDlSpmux4
+attr title  "Average cqi Spmux band 4, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlSpmux4:lteAvg 	3.9800399201597
+attr source  cqiDlSpmux4
+attr title  "Average cqi Spmux band 4, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlSpmux3:lteAvg 	14.978043912176
+attr source  cqiDlSpmux3
+attr title  "Average cqi Spmux band 3, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlSpmux3:lteAvg 	2.5049900199601
+attr source  cqiDlSpmux3
+attr title  "Average cqi Spmux band 3, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlSpmux2:lteAvg 	15
+attr source  cqiDlSpmux2
+attr title  "Average cqi Spmux band 2, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlSpmux2:lteAvg 	7.1177644710579
+attr source  cqiDlSpmux2
+attr title  "Average cqi Spmux band 2, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlSpmux1:lteAvg 	15
+attr source  cqiDlSpmux1
+attr title  "Average cqi Spmux band 1, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlSpmux1:lteAvg 	7.5329341317365
+attr source  cqiDlSpmux1
+attr title  "Average cqi Spmux band 1, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlSpmux0:lteAvg 	14.996007984032
+attr source  cqiDlSpmux0
+attr title  "Average cqi Spmux band 0, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlSpmux0:lteAvg 	7.125748502994
+attr source  cqiDlSpmux0
+attr title  "Average cqi Spmux band 0, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlSiso4:lteAvg 	15
+attr source  cqiDlSiso4
+attr title  "Average cqi siso band 4, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlSiso4:lteAvg 	3.2594810379242
+attr source  cqiDlSiso4
+attr title  "Average cqi siso band 4, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlSiso3:lteAvg 	14.974051896208
+attr source  cqiDlSiso3
+attr title  "Average cqi siso band 3, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlSiso3:lteAvg 	2.1536926147705
+attr source  cqiDlSiso3
+attr title  "Average cqi siso band 3, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlSiso2:lteAvg 	15
+attr source  cqiDlSiso2
+attr title  "Average cqi siso band 2, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlSiso2:lteAvg 	9.0039920159681
+attr source  cqiDlSiso2
+attr title  "Average cqi siso band 2, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlSiso1:lteAvg 	15
+attr source  cqiDlSiso1
+attr title  "Average cqi siso band 1, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlSiso1:lteAvg 	10.00998003992
+attr source  cqiDlSiso1
+attr title  "Average cqi siso band 1, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlSiso0:lteAvg 	15
+attr source  cqiDlSiso0
+attr title  "Average cqi siso band 0, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	cqiDlSiso0:lteAvg 	8.6546906187625
+attr source  cqiDlSiso0
+attr title  "Average cqi siso band 0, lteAvg"
+attr unit  cqi
+scalar SingleCell2.eNodeB.nic.mac 	depletedPowerUl:lteAvg 	0
+attr source  depletedPowerUl
+attr title  "LTE ENodeB depleted power Ul, lteAvg"
+attr unit  watts
+scalar SingleCell2.eNodeB.nic.mac 	depletedPowerDl:lteAvg 	260
+attr source  depletedPowerDl
+attr title  "LTE ENodeB depleted power Dl, lteAvg"
+attr unit  watts
+scalar SingleCell2.eNodeB.nic.mac 	avgServedBlocksUl:lteAvg 	3.1096301232922
+attr source  avgServedBlocksUl
+attr title  "LTE Avg Served Blocks Ul, lteAvg"
+attr unit  blocks
+scalar SingleCell2.eNodeB.nic.mac 	avgServedBlocksDl:lteAvg 	0
+attr source  avgServedBlocksDl
+attr title  "LTE Avg Served Blocks Dl, lteAvg"
+attr unit  blocks
+scalar SingleCell2.eNodeB.nic.mac 	cellBlocksUtilizationUl:lteAvg 	0.51827168721538
+attr source  cellBlocksUtilizationUl
+attr title  "LTE Cell Blocks Utilization Ul, lteAvg"
+attr unit  blocks
+scalar SingleCell2.eNodeB.nic.mac 	cellBlocksUtilizationDl:lteAvg 	0
+attr source  cellBlocksUtilizationDl
+attr title  "LTE Cell Blocks Utilization Dl, lteAvg"
+attr unit  blocks
+scalar SingleCell2.eNodeB.nic.mac 	measuredItbs:mean 	1.7791777188329
+attr source  measuredItbs
+attr title  "TBS index, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	harqErrorRate_4th_D2D:mean 	-nan
+attr source  harqErrorRate_4th_D2D
+attr title  "Harq Error Rate D2D, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	harqErrorRate_4th_Dl:mean 	-nan
+attr source  harqErrorRate_4th_Dl
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	harqErrorRate_4th_Ul:mean 	-nan
+attr source  harqErrorRate_4th_Ul
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	harqErrorRate_3rd_D2D:mean 	-nan
+attr source  harqErrorRate_3rd_D2D
+attr title  "Harq Error Rate D2D, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	harqErrorRate_3rd_Dl:mean 	-nan
+attr source  harqErrorRate_3rd_Dl
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	harqErrorRate_3rd_Ul:mean 	-nan
+attr source  harqErrorRate_3rd_Ul
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	harqErrorRate_2nd_D2D:mean 	-nan
+attr source  harqErrorRate_2nd_D2D
+attr title  "Harq Error Rate D2D, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	harqErrorRate_2nd_Dl:mean 	-nan
+attr source  harqErrorRate_2nd_Dl
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	harqErrorRate_2nd_Ul:mean 	-nan
+attr source  harqErrorRate_2nd_Ul
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	harqErrorRate_1st_D2D:mean 	-nan
+attr source  harqErrorRate_1st_D2D
+attr title  "Harq Error Rate D2D, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	harqErrorRate_1st_Dl:mean 	-nan
+attr source  harqErrorRate_1st_Dl
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	harqErrorRate_1st_Ul:mean 	-nan
+attr source  harqErrorRate_1st_Ul
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	harqErrorRateD2D:mean 	-nan
+attr source  harqErrorRateD2D
+attr title  "Harq Error Rate D2D, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	harqErrorRateDl:mean 	-nan
+attr source  harqErrorRateDl
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	harqErrorRateUl:mean 	-nan
+attr source  harqErrorRateUl
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	macPacketLossD2D:mean 	-nan
+attr source  macPacketLossD2D
+attr title  "Mac Packet Loss D2D, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	macPacketLossDl:mean 	-nan
+attr source  macPacketLossDl
+attr title  "Mac Packet Loss, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	macPacketLossUl:mean 	-nan
+attr source  macPacketLossUl
+attr title  "Mac Packet Loss, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	macCellPacketLossD2D:mean 	-nan
+attr source  macCellPacketLossD2D
+attr title  "Mac Cell Packet Loss D2D, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	macCellPacketLossUl:mean 	0
+attr source  macCellPacketLossUl
+attr title  "Mac Cell Packet Loss, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	macCellPacketLossDl:mean 	-nan
+attr source  macCellPacketLossDl
+attr title  "Mac Cell Packet Loss, mean"
+attr unit  ""
+scalar SingleCell2.eNodeB.nic.mac 	macCellThroughputUl:lteRate 	7341
+attr source  macCellThroughputUl
+attr title  "Cell Throughput at the MAC layer UL, lteRate"
+attr unit  Bps
+scalar SingleCell2.ue[0].nic.mac 	macThroughputUl:lteRate 	2532.3232323232
+attr source  macThroughputUl
+attr title  "Throughput at the MAC layer UL, lteRate"
+attr unit  Bps
+scalar SingleCell2.ue[1].nic.mac 	macThroughputUl:lteRate 	4834
+attr source  macThroughputUl
+attr title  "Throughput at the MAC layer UL, lteRate"
+attr unit  Bps
+scalar SingleCell2.ue[0].nic.mac 	macDelayUl:lteAvg 	0.004
+attr source  macDelayUl
+attr title  "Delay at the MAC layer UL, lteAvg"
+attr unit  s
+scalar SingleCell2.ue[1].nic.mac 	macDelayUl:lteAvg 	0.0051681415929201
+attr source  macDelayUl
+attr title  "Delay at the MAC layer UL, lteAvg"
+attr unit  s
+scalar SingleCell2.eNodeB.nic.mac 	sentPacketToLowerLayer:count 	3879
+attr interpolationmode  none
+attr source  sentPacketToLowerLayer
+scalar SingleCell2.eNodeB.nic.mac 	sentPacketToLowerLayer:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPacketToLowerLayer
+scalar SingleCell2.eNodeB.nic.mac 	sentPacketToUpperLayer:count 	1331
+attr interpolationmode  none
+attr source  sentPacketToUpperLayer
+scalar SingleCell2.eNodeB.nic.mac 	sentPacketToUpperLayer:sum(packetBytes) 	19103
+attr interpolationmode  none
+attr source  sentPacketToUpperLayer
+scalar SingleCell2.eNodeB.nic.mac 	receivedPacketFromLowerLayer:count 	2982
+attr interpolationmode  none
+attr source  receivedPacketFromLowerLayer
+scalar SingleCell2.eNodeB.nic.mac 	receivedPacketFromLowerLayer:sum(packetBytes) 	24221
+attr interpolationmode  none
+attr source  receivedPacketFromLowerLayer
+scalar SingleCell2.eNodeB.nic.mac 	receivedPacketFromUpperLayer:count 	0
+attr interpolationmode  none
+attr source  receivedPacketFromUpperLayer
+scalar SingleCell2.eNodeB.nic.mac 	receivedPacketFromUpperLayer:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  receivedPacketFromUpperLayer
+scalar SingleCell2.ue[0].nic.mac 	averageCqiUl:lteAvg 	14.875
+attr source  averageCqiUl
+attr title  "Average Cqi reported in UL, lteAvg"
+attr unit  cqi
+scalar SingleCell2.ue[1].nic.mac 	averageCqiUl:lteAvg 	2.0051847051199
+attr source  averageCqiUl
+attr title  "Average Cqi reported in UL, lteAvg"
+attr unit  cqi
+statistic SingleCell2.eNodeB.pppIf.queue 	queueingTime:histogram
+field count 239
+field mean 1.034309623431e-09
+field stddev 9.1929820376234e-09
+field sum 2.472e-07
+field sqrsum 2.036928e-14
+field min 0
+field max 8.24e-08
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-4.12e-08	0
+bin	-3.5706666666667e-08	0
+bin	-3.0213333333333e-08	0
+bin	-2.472e-08	0
+bin	-1.9226666666667e-08	0
+bin	-1.3733333333333e-08	0
+bin	-8.24e-09	0
+bin	-2.7466666666667e-09	236
+bin	2.7466666666667e-09	0
+bin	8.24e-09	0
+bin	1.3733333333333e-08	0
+bin	1.9226666666667e-08	0
+bin	2.472e-08	0
+bin	3.0213333333333e-08	0
+bin	3.5706666666667e-08	0
+bin	4.12e-08	0
+bin	4.6693333333333e-08	0
+bin	5.2186666666667e-08	0
+bin	5.768e-08	0
+bin	6.3173333333333e-08	0
+bin	6.8666666666667e-08	0
+bin	7.416e-08	0
+bin	7.9653333333333e-08	3
+bin	8.5146666666667e-08	0
+bin	9.064e-08	0
+bin	9.6133333333333e-08	0
+bin	1.0162666666667e-07	0
+bin	1.0712e-07	0
+bin	1.1261333333333e-07	0
+bin	1.1810666666667e-07	0
+bin	1.236e-07	0
+scalar SingleCell2.eNodeB.pppIf.queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar SingleCell2.eNodeB.pppIf.queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar SingleCell2.eNodeB.pppIf.queue 	queueLength:max 	1
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar SingleCell2.eNodeB.pppIf.queue 	queueLength:timeavg 	9.3283018867925e-08
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar SingleCell2.eNodeB.pppIf.queue 	rcvdPk:count 	239
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar SingleCell2.eNodeB.pppIf.queue 	rcvdPk:sum(packetBytes) 	22944
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar SingleCell2.eNodeB.pppIf.ppp 	txState:timeavg 	6.5711044377711e-06
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar SingleCell2.eNodeB.pppIf.ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar SingleCell2.eNodeB.pppIf.ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar SingleCell2.eNodeB.pppIf.ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar SingleCell2.eNodeB.pppIf.ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar SingleCell2.eNodeB.pppIf.ppp 	rxPkOk:count 	0
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar SingleCell2.eNodeB.pppIf.ppp 	rxPkOk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar SingleCell2.eNodeB.pppIf.ppp 	txPk:count 	239
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar SingleCell2.eNodeB.pppIf.ppp 	txPk:sum(packetBytes) 	24617
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar SingleCell2.eNodeB.pppIf.ppp 	rcvdPkFromHL:count 	239
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar SingleCell2.eNodeB.pppIf.ppp 	rcvdPkFromHL:sum(packetBytes) 	22944
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar SingleCell2.eNodeB.pppIf.ppp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar SingleCell2.eNodeB.pppIf.ppp 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar SingleCell2.eNodeB.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar SingleCell2.eNodeB.udp 	droppedPkWrongPort:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar SingleCell2.eNodeB.udp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar SingleCell2.eNodeB.udp 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar SingleCell2.eNodeB.udp 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar SingleCell2.eNodeB.udp 	sentPk:count 	239
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar SingleCell2.eNodeB.udp 	sentPk:sum(packetBytes) 	18164
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar SingleCell2.eNodeB.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar SingleCell2.eNodeB.networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar SingleCell2.eNodeB.networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar SingleCell2.eNodeB.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar SingleCell2.eNodeB.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar SingleCell2.ue[0].udpApp[0] 	voIPGeneratedThroughtput:timeavg 	-nan
+attr source  voIPGeneratedThroughtput
+attr title  "Throughput generated by the application, timeavg"
+attr unit  Bps
+scalar SingleCell2.ue[0].udpApp[0] 	voIPGeneratedThroughtput:mean 	-nan
+attr source  voIPGeneratedThroughtput
+attr title  "Throughput generated by the application, mean"
+attr unit  Bps
+scalar SingleCell2.ue[0].udpApp[0] 	voIPGeneratedThroughtput:last(sumPerDuration) 	-nan
+attr source  voIPGeneratedThroughtput
+attr title  "Throughput generated by the application, last(sumPerDuration)"
+attr unit  Bps
+scalar SingleCell2.ue[0].udpApp[0] 	voIPGeneratedThroughtput:sum 	0
+attr source  voIPGeneratedThroughtput
+attr title  "Throughput generated by the application, sum"
+attr unit  Bps
+scalar SingleCell2.ue[0].udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar SingleCell2.ue[0].udp 	droppedPkWrongPort:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar SingleCell2.ue[0].udp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar SingleCell2.ue[0].udp 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar SingleCell2.ue[0].udp 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar SingleCell2.ue[0].udp 	sentPk:count 	103
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar SingleCell2.ue[0].udp 	sentPk:sum(packetBytes) 	4944
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar SingleCell2.ue[0].nic.pdcpRrc 	sentPacketToLowerLayer:count 	103
+attr interpolationmode  none
+attr source  sentPacketToLowerLayer
+scalar SingleCell2.ue[0].nic.pdcpRrc 	sentPacketToLowerLayer:sum(packetBytes) 	7107
+attr interpolationmode  none
+attr source  sentPacketToLowerLayer
+scalar SingleCell2.ue[0].nic.pdcpRrc 	sentPacketToUpperLayer:count 	0
+attr interpolationmode  none
+attr source  sentPacketToUpperLayer
+scalar SingleCell2.ue[0].nic.pdcpRrc 	sentPacketToUpperLayer:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPacketToUpperLayer
+scalar SingleCell2.ue[0].nic.pdcpRrc 	receivedPacketFromLowerLayer:count 	0
+attr interpolationmode  none
+attr source  receivedPacketFromLowerLayer
+scalar SingleCell2.ue[0].nic.pdcpRrc 	receivedPacketFromLowerLayer:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  receivedPacketFromLowerLayer
+scalar SingleCell2.ue[0].nic.pdcpRrc 	receivedPacketFromUpperLayer:count 	103
+attr interpolationmode  none
+attr source  receivedPacketFromUpperLayer
+scalar SingleCell2.ue[0].nic.pdcpRrc 	receivedPacketFromUpperLayer:sum(packetBytes) 	7004
+attr interpolationmode  none
+attr source  receivedPacketFromUpperLayer
+scalar SingleCell2.ue[0].nic.rlc.um 	rlcPduPacketLossUl:lteAvg 	0
+attr source  rlcPduPacketLossUl
+attr title  "rlc Packet Loss, lteAvg"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.rlc.um 	rlcPacketLossTotal:lteAvg 	0
+attr source  rlcPacketLossTotal
+attr title  "rlc Packet Loss, lteAvg"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.rlc.um 	rlcPacketLossUl:lteAvg 	0
+attr source  rlcPacketLossUl
+attr title  "rlc Packet Loss, lteAvg"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.rlc.um 	rlcPduThroughputUl:lteRate 	2462.2895622896
+attr source  rlcPduThroughputUl
+attr title  "Throughput at the rlc layer UL, lteRate"
+attr unit  Bps
+scalar SingleCell2.ue[0].nic.rlc.um 	rlcPduDelayUl:lteAvg 	0.004
+attr source  rlcPduDelayUl
+attr title  "Delay at the rlc layer UL, lteAvg"
+attr unit  s
+scalar SingleCell2.ue[0].nic.rlc.um 	rlcThroughputUl:lteRate 	2392.9292929293
+attr source  rlcThroughputUl
+attr title  "Throughput at the rlc layer UL, lteRate"
+attr unit  Bps
+scalar SingleCell2.ue[0].nic.rlc.um 	rlcDelayUl:lteAvg 	0.0089859297287379
+attr source  rlcDelayUl
+attr title  "Delay at the rlc layer UL, lteAvg"
+attr unit  s
+scalar SingleCell2.ue[0].nic.mac 	measuredItbs:mean 	-nan
+attr source  measuredItbs
+attr title  "TBS index, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	harqErrorRate_4th_D2D:mean 	-nan
+attr source  harqErrorRate_4th_D2D
+attr title  "Harq Error Rate D2D, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	harqErrorRate_4th_Dl:mean 	-nan
+attr source  harqErrorRate_4th_Dl
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	harqErrorRate_4th_Ul:mean 	-nan
+attr source  harqErrorRate_4th_Ul
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	harqErrorRate_3rd_D2D:mean 	-nan
+attr source  harqErrorRate_3rd_D2D
+attr title  "Harq Error Rate D2D, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	harqErrorRate_3rd_Dl:mean 	-nan
+attr source  harqErrorRate_3rd_Dl
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	harqErrorRate_3rd_Ul:mean 	-nan
+attr source  harqErrorRate_3rd_Ul
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	harqErrorRate_2nd_D2D:mean 	-nan
+attr source  harqErrorRate_2nd_D2D
+attr title  "Harq Error Rate D2D, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	harqErrorRate_2nd_Dl:mean 	-nan
+attr source  harqErrorRate_2nd_Dl
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	harqErrorRate_2nd_Ul:mean 	-nan
+attr source  harqErrorRate_2nd_Ul
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	harqErrorRate_1st_D2D:mean 	-nan
+attr source  harqErrorRate_1st_D2D
+attr title  "Harq Error Rate D2D, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	harqErrorRate_1st_Dl:mean 	-nan
+attr source  harqErrorRate_1st_Dl
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	harqErrorRate_1st_Ul:mean 	0
+attr source  harqErrorRate_1st_Ul
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	harqErrorRateD2D:mean 	-nan
+attr source  harqErrorRateD2D
+attr title  "Harq Error Rate D2D, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	harqErrorRateDl:mean 	-nan
+attr source  harqErrorRateDl
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	harqErrorRateUl:mean 	0
+attr source  harqErrorRateUl
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	macPacketLossD2D:mean 	-nan
+attr source  macPacketLossD2D
+attr title  "Mac Packet Loss D2D, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	macPacketLossDl:mean 	-nan
+attr source  macPacketLossDl
+attr title  "Mac Packet Loss, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	macPacketLossUl:mean 	0
+attr source  macPacketLossUl
+attr title  "Mac Packet Loss, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	macCellPacketLossD2D:mean 	-nan
+attr source  macCellPacketLossD2D
+attr title  "Mac Cell Packet Loss D2D, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	macCellPacketLossUl:mean 	-nan
+attr source  macCellPacketLossUl
+attr title  "Mac Cell Packet Loss, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	macCellPacketLossDl:mean 	-nan
+attr source  macCellPacketLossDl
+attr title  "Mac Cell Packet Loss, mean"
+attr unit  ""
+scalar SingleCell2.ue[0].nic.mac 	sentPacketToLowerLayer:count 	208
+attr interpolationmode  none
+attr source  sentPacketToLowerLayer
+scalar SingleCell2.ue[0].nic.mac 	sentPacketToLowerLayer:sum(packetBytes) 	7521
+attr interpolationmode  none
+attr source  sentPacketToLowerLayer
+scalar SingleCell2.ue[0].nic.mac 	sentPacketToUpperLayer:count 	104
+attr interpolationmode  none
+attr source  sentPacketToUpperLayer
+scalar SingleCell2.ue[0].nic.mac 	sentPacketToUpperLayer:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPacketToUpperLayer
+scalar SingleCell2.ue[0].nic.mac 	receivedPacketFromLowerLayer:count 	416
+attr interpolationmode  none
+attr source  receivedPacketFromLowerLayer
+scalar SingleCell2.ue[0].nic.mac 	receivedPacketFromLowerLayer:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  receivedPacketFromLowerLayer
+scalar SingleCell2.ue[0].nic.mac 	receivedPacketFromUpperLayer:count 	207
+attr interpolationmode  none
+attr source  receivedPacketFromUpperLayer
+scalar SingleCell2.ue[0].nic.mac 	receivedPacketFromUpperLayer:sum(packetBytes) 	14420
+attr interpolationmode  none
+attr source  receivedPacketFromUpperLayer
+scalar SingleCell2.ue[0].networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar SingleCell2.ue[0].networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar SingleCell2.ue[0].networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar SingleCell2.ue[0].networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar SingleCell2.ue[0].networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar SingleCell2.ue[1].udpApp[0] 	voIPGeneratedThroughtput:timeavg 	-nan
+attr source  voIPGeneratedThroughtput
+attr title  "Throughput generated by the application, timeavg"
+attr unit  Bps
+scalar SingleCell2.ue[1].udpApp[0] 	voIPGeneratedThroughtput:mean 	-nan
+attr source  voIPGeneratedThroughtput
+attr title  "Throughput generated by the application, mean"
+attr unit  Bps
+scalar SingleCell2.ue[1].udpApp[0] 	voIPGeneratedThroughtput:last(sumPerDuration) 	-nan
+attr source  voIPGeneratedThroughtput
+attr title  "Throughput generated by the application, last(sumPerDuration)"
+attr unit  Bps
+scalar SingleCell2.ue[1].udpApp[0] 	voIPGeneratedThroughtput:sum 	0
+attr source  voIPGeneratedThroughtput
+attr title  "Throughput generated by the application, sum"
+attr unit  Bps
+scalar SingleCell2.ue[1].udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar SingleCell2.ue[1].udp 	droppedPkWrongPort:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar SingleCell2.ue[1].udp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar SingleCell2.ue[1].udp 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar SingleCell2.ue[1].udp 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar SingleCell2.ue[1].udp 	sentPk:count 	133
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar SingleCell2.ue[1].udp 	sentPk:sum(packetBytes) 	6384
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar SingleCell2.ue[1].nic.pdcpRrc 	sentPacketToLowerLayer:count 	133
+attr interpolationmode  none
+attr source  sentPacketToLowerLayer
+scalar SingleCell2.ue[1].nic.pdcpRrc 	sentPacketToLowerLayer:sum(packetBytes) 	9177
+attr interpolationmode  none
+attr source  sentPacketToLowerLayer
+scalar SingleCell2.ue[1].nic.pdcpRrc 	sentPacketToUpperLayer:count 	0
+attr interpolationmode  none
+attr source  sentPacketToUpperLayer
+scalar SingleCell2.ue[1].nic.pdcpRrc 	sentPacketToUpperLayer:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPacketToUpperLayer
+scalar SingleCell2.ue[1].nic.pdcpRrc 	receivedPacketFromLowerLayer:count 	0
+attr interpolationmode  none
+attr source  receivedPacketFromLowerLayer
+scalar SingleCell2.ue[1].nic.pdcpRrc 	receivedPacketFromLowerLayer:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  receivedPacketFromLowerLayer
+scalar SingleCell2.ue[1].nic.pdcpRrc 	receivedPacketFromUpperLayer:count 	133
+attr interpolationmode  none
+attr source  receivedPacketFromUpperLayer
+scalar SingleCell2.ue[1].nic.pdcpRrc 	receivedPacketFromUpperLayer:sum(packetBytes) 	9044
+attr interpolationmode  none
+attr source  receivedPacketFromUpperLayer
+scalar SingleCell2.ue[1].nic.rlc.um 	rlcPduPacketLossUl:lteAvg 	0
+attr source  rlcPduPacketLossUl
+attr title  "rlc Packet Loss, lteAvg"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.rlc.um 	rlcPacketLossTotal:lteAvg 	0
+attr source  rlcPacketLossTotal
+attr title  "rlc Packet Loss, lteAvg"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.rlc.um 	rlcPacketLossUl:lteAvg 	0
+attr source  rlcPacketLossUl
+attr title  "rlc Packet Loss, lteAvg"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.rlc.um 	rlcPduThroughputUl:lteRate 	3930
+attr source  rlcPduThroughputUl
+attr title  "Throughput at the rlc layer UL, lteRate"
+attr unit  Bps
+scalar SingleCell2.ue[1].nic.rlc.um 	rlcPduDelayUl:lteAvg 	0.0052899022801301
+attr source  rlcPduDelayUl
+attr title  "Delay at the rlc layer UL, lteAvg"
+attr unit  s
+scalar SingleCell2.ue[1].nic.rlc.um 	rlcThroughputUl:lteRate 	3131.1311311311
+attr source  rlcThroughputUl
+attr title  "Throughput at the rlc layer UL, lteRate"
+attr unit  Bps
+scalar SingleCell2.ue[1].nic.rlc.um 	rlcDelayUl:lteAvg 	0.026967724965353
+attr source  rlcDelayUl
+attr title  "Delay at the rlc layer UL, lteAvg"
+attr unit  s
+scalar SingleCell2.ue[1].nic.mac 	measuredItbs:mean 	-nan
+attr source  measuredItbs
+attr title  "TBS index, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	harqErrorRate_4th_D2D:mean 	-nan
+attr source  harqErrorRate_4th_D2D
+attr title  "Harq Error Rate D2D, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	harqErrorRate_4th_Dl:mean 	-nan
+attr source  harqErrorRate_4th_Dl
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	harqErrorRate_4th_Ul:mean 	-nan
+attr source  harqErrorRate_4th_Ul
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	harqErrorRate_3rd_D2D:mean 	-nan
+attr source  harqErrorRate_3rd_D2D
+attr title  "Harq Error Rate D2D, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	harqErrorRate_3rd_Dl:mean 	-nan
+attr source  harqErrorRate_3rd_Dl
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	harqErrorRate_3rd_Ul:mean 	0
+attr source  harqErrorRate_3rd_Ul
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	harqErrorRate_2nd_D2D:mean 	-nan
+attr source  harqErrorRate_2nd_D2D
+attr title  "Harq Error Rate D2D, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	harqErrorRate_2nd_Dl:mean 	-nan
+attr source  harqErrorRate_2nd_Dl
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	harqErrorRate_2nd_Ul:mean 	0.048387096774194
+attr source  harqErrorRate_2nd_Ul
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	harqErrorRate_1st_D2D:mean 	-nan
+attr source  harqErrorRate_1st_D2D
+attr title  "Harq Error Rate D2D, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	harqErrorRate_1st_Dl:mean 	-nan
+attr source  harqErrorRate_1st_Dl
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	harqErrorRate_1st_Ul:mean 	0.13323464100666
+attr source  harqErrorRate_1st_Ul
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	harqErrorRateD2D:mean 	-nan
+attr source  harqErrorRateD2D
+attr title  "Harq Error Rate D2D, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	harqErrorRateDl:mean 	-nan
+attr source  harqErrorRateDl
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	harqErrorRateUl:mean 	0.1222509702458
+attr source  harqErrorRateUl
+attr title  "Harq Error Rate Dl, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	macPacketLossD2D:mean 	-nan
+attr source  macPacketLossD2D
+attr title  "Mac Packet Loss D2D, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	macPacketLossDl:mean 	-nan
+attr source  macPacketLossDl
+attr title  "Mac Packet Loss, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	macPacketLossUl:mean 	0
+attr source  macPacketLossUl
+attr title  "Mac Packet Loss, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	macCellPacketLossD2D:mean 	-nan
+attr source  macCellPacketLossD2D
+attr title  "Mac Cell Packet Loss D2D, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	macCellPacketLossUl:mean 	-nan
+attr source  macCellPacketLossUl
+attr title  "Mac Cell Packet Loss, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	macCellPacketLossDl:mean 	-nan
+attr source  macCellPacketLossDl
+attr title  "Mac Cell Packet Loss, mean"
+attr unit  ""
+scalar SingleCell2.ue[1].nic.mac 	sentPacketToLowerLayer:count 	1771
+attr interpolationmode  none
+attr source  sentPacketToLowerLayer
+scalar SingleCell2.ue[1].nic.mac 	sentPacketToLowerLayer:sum(packetBytes) 	16688
+attr interpolationmode  none
+attr source  sentPacketToLowerLayer
+scalar SingleCell2.ue[1].nic.mac 	sentPacketToUpperLayer:count 	1370
+attr interpolationmode  none
+attr source  sentPacketToUpperLayer
+scalar SingleCell2.ue[1].nic.mac 	sentPacketToUpperLayer:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPacketToUpperLayer
+scalar SingleCell2.ue[1].nic.mac 	receivedPacketFromLowerLayer:count 	3465
+attr interpolationmode  none
+attr source  receivedPacketFromLowerLayer
+scalar SingleCell2.ue[1].nic.mac 	receivedPacketFromLowerLayer:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  receivedPacketFromLowerLayer
+scalar SingleCell2.ue[1].nic.mac 	receivedPacketFromUpperLayer:count 	1503
+attr interpolationmode  none
+attr source  receivedPacketFromUpperLayer
+scalar SingleCell2.ue[1].nic.mac 	receivedPacketFromUpperLayer:sum(packetBytes) 	20917
+attr interpolationmode  none
+attr source  receivedPacketFromUpperLayer
+scalar SingleCell2.ue[1].networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar SingleCell2.ue[1].networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar SingleCell2.ue[1].networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar SingleCell2.ue[1].networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar SingleCell2.ue[1].networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar SingleCell2.pgw2.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar SingleCell2.pgw2.networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar SingleCell2.pgw2.networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar SingleCell2.pgw2.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar SingleCell2.pgw2.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar SingleCell2.pgw2.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar SingleCell2.pgw2.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar SingleCell2.pgw2.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar SingleCell2.pgw2.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar SingleCell2.pgw2.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar SingleCell2.pgw2.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic SingleCell2.pgw2.ppp[0].queue 	queueingTime:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min -nan
+field max -nan
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar SingleCell2.pgw2.ppp[0].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar SingleCell2.pgw2.ppp[0].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar SingleCell2.pgw2.ppp[0].queue 	queueLength:max 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar SingleCell2.pgw2.ppp[0].queue 	queueLength:timeavg 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar SingleCell2.pgw2.ppp[0].queue 	rcvdPk:count 	0
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar SingleCell2.pgw2.ppp[0].queue 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar SingleCell2.pgw2.ppp[0].ppp 	txState:timeavg 	-nan
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar SingleCell2.pgw2.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar SingleCell2.pgw2.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar SingleCell2.pgw2.ppp[0].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar SingleCell2.pgw2.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar SingleCell2.pgw2.ppp[0].ppp 	rxPkOk:count 	103
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar SingleCell2.pgw2.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	10609
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar SingleCell2.pgw2.ppp[0].ppp 	txPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar SingleCell2.pgw2.ppp[0].ppp 	txPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar SingleCell2.pgw2.ppp[0].ppp 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar SingleCell2.pgw2.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar SingleCell2.pgw2.ppp[0].ppp 	passedUpPk:count 	103
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar SingleCell2.pgw2.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	9888
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic SingleCell2.pgw2.pppInterface.queue 	queueingTime:histogram
+field count 103
+field mean 0
+field stddev 0
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	103
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar SingleCell2.pgw2.pppInterface.queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar SingleCell2.pgw2.pppInterface.queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar SingleCell2.pgw2.pppInterface.queue 	queueLength:max 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar SingleCell2.pgw2.pppInterface.queue 	queueLength:timeavg 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar SingleCell2.pgw2.pppInterface.queue 	rcvdPk:count 	103
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar SingleCell2.pgw2.pppInterface.queue 	rcvdPk:sum(packetBytes) 	7004
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar SingleCell2.pgw2.pppInterface.ppp 	txState:timeavg 	2.0808082663293e-06
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar SingleCell2.pgw2.pppInterface.ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar SingleCell2.pgw2.pppInterface.ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar SingleCell2.pgw2.pppInterface.ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar SingleCell2.pgw2.pppInterface.ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar SingleCell2.pgw2.pppInterface.ppp 	rxPkOk:count 	0
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar SingleCell2.pgw2.pppInterface.ppp 	rxPkOk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar SingleCell2.pgw2.pppInterface.ppp 	txPk:count 	103
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar SingleCell2.pgw2.pppInterface.ppp 	txPk:sum(packetBytes) 	7725
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar SingleCell2.pgw2.pppInterface.ppp 	rcvdPkFromHL:count 	103
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar SingleCell2.pgw2.pppInterface.ppp 	rcvdPkFromHL:sum(packetBytes) 	7004
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar SingleCell2.pgw2.pppInterface.ppp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar SingleCell2.pgw2.pppInterface.ppp 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar SingleCell2.pgw2.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar SingleCell2.pgw2.udp 	droppedPkWrongPort:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar SingleCell2.pgw2.udp 	passedUpPk:count 	103
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar SingleCell2.pgw2.udp 	rcvdPk:count 	103
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar SingleCell2.pgw2.udp 	rcvdPk:sum(packetBytes) 	7828
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar SingleCell2.pgw2.udp 	sentPk:count 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar SingleCell2.pgw2.udp 	sentPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar SingleCell2.router1.networkLayer.arp 	failedARPResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar SingleCell2.router1.networkLayer.arp 	completedARPResolution:count 	0
+attr title  "ARP completed resolutions, count"
+scalar SingleCell2.router1.networkLayer.arp 	initiatedARPResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar SingleCell2.router1.networkLayer.arp 	sentReply:count 	0
+attr title  "ARP replies sent, count"
+scalar SingleCell2.router1.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar SingleCell2.router1.lo0.lo 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar SingleCell2.router1.lo0.lo 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar SingleCell2.router1.lo0.lo 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar SingleCell2.router1.lo0.lo 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar SingleCell2.router1.lo0.lo 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar SingleCell2.router1.lo0.lo 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic SingleCell2.router1.ppp[0].queue 	queueingTime:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min -nan
+field max -nan
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar SingleCell2.router1.ppp[0].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar SingleCell2.router1.ppp[0].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[0].queue 	queueLength:max 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar SingleCell2.router1.ppp[0].queue 	queueLength:timeavg 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar SingleCell2.router1.ppp[0].queue 	rcvdPk:count 	0
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar SingleCell2.router1.ppp[0].queue 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[0].ppp 	txState:timeavg 	-nan
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar SingleCell2.router1.ppp[0].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar SingleCell2.router1.ppp[0].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[0].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar SingleCell2.router1.ppp[0].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[0].ppp 	rxPkOk:count 	239
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar SingleCell2.router1.ppp[0].ppp 	rxPkOk:sum(packetBytes) 	24617
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[0].ppp 	txPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar SingleCell2.router1.ppp[0].ppp 	txPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[0].ppp 	rcvdPkFromHL:count 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar SingleCell2.router1.ppp[0].ppp 	rcvdPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[0].ppp 	passedUpPk:count 	239
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar SingleCell2.router1.ppp[0].ppp 	passedUpPk:sum(packetBytes) 	22944
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic SingleCell2.router1.ppp[1].queue 	queueingTime:histogram
+field count 136
+field mean 0
+field stddev 0
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	136
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar SingleCell2.router1.ppp[1].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar SingleCell2.router1.ppp[1].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[1].queue 	queueLength:max 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar SingleCell2.router1.ppp[1].queue 	queueLength:timeavg 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar SingleCell2.router1.ppp[1].queue 	rcvdPk:count 	136
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar SingleCell2.router1.ppp[1].queue 	rcvdPk:sum(packetBytes) 	13056
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[1].ppp 	txState:timeavg 	3.739206037728e-06
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar SingleCell2.router1.ppp[1].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar SingleCell2.router1.ppp[1].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[1].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar SingleCell2.router1.ppp[1].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[1].ppp 	rxPkOk:count 	0
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar SingleCell2.router1.ppp[1].ppp 	rxPkOk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[1].ppp 	txPk:count 	136
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar SingleCell2.router1.ppp[1].ppp 	txPk:sum(packetBytes) 	14008
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[1].ppp 	rcvdPkFromHL:count 	136
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar SingleCell2.router1.ppp[1].ppp 	rcvdPkFromHL:sum(packetBytes) 	13056
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[1].ppp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar SingleCell2.router1.ppp[1].ppp 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+statistic SingleCell2.router1.ppp[2].queue 	queueingTime:histogram
+field count 103
+field mean 0
+field stddev 0
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	103
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar SingleCell2.router1.ppp[2].queue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar SingleCell2.router1.ppp[2].queue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[2].queue 	queueLength:max 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar SingleCell2.router1.ppp[2].queue 	queueLength:timeavg 	-nan
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+scalar SingleCell2.router1.ppp[2].queue 	rcvdPk:count 	103
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar SingleCell2.router1.ppp[2].queue 	rcvdPk:sum(packetBytes) 	9888
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[2].ppp 	txState:timeavg 	2.8576432250343e-06
+attr interpolationmode  sample-hold
+attr title  "tx state, timeavg"
+scalar SingleCell2.router1.ppp[2].ppp 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar SingleCell2.router1.ppp[2].ppp 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[2].ppp 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar SingleCell2.router1.ppp[2].ppp 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[2].ppp 	rxPkOk:count 	0
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar SingleCell2.router1.ppp[2].ppp 	rxPkOk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[2].ppp 	txPk:count 	103
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, count"
+scalar SingleCell2.router1.ppp[2].ppp 	txPk:sum(packetBytes) 	10609
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[2].ppp 	rcvdPkFromHL:count 	103
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, count"
+scalar SingleCell2.router1.ppp[2].ppp 	rcvdPkFromHL:sum(packetBytes) 	9888
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, sum(packetBytes)"
+scalar SingleCell2.router1.ppp[2].ppp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar SingleCell2.router1.ppp[2].ppp 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
